@@ -1,0 +1,10 @@
+.campaignContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  padding: 4vh 4vw;
+  min-height: 75vh;
+  width: 100vw;
+  box-sizing: border-box;
+}

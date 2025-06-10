@@ -1,0 +1,61 @@
+.campaignContainer {
+    padding: 2vh 4vh;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 71vh;
+    background-color: #f9f9f9;
+    border-radius: 2vh;
+}
+
+.campaignContainer h2 {
+    font-size: 4vh;
+    margin-bottom: 3vh;
+    color: #333;
+    text-align: center;
+}
+
+.noCampaigns {
+    font-size: 2.2vh;
+    color: #777;
+    text-align: center;
+    padding: 4vh 0;
+    font-style: italic;
+}
+
+.campaignList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr));
+    gap: 3vh;
+}
+
+/* Responsive Queries */
+
+@media (max-width: 1024px) {
+    .campaignList {
+        grid-template-columns: repeat(auto-fill, minmax(45vh, 1fr));
+        gap: 2.5vh;
+    }
+
+    .campaignTitle {
+        font-size: 3.5vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .campaignList {
+        grid-template-columns: 1fr;
+        gap: 2vh;
+    }
+
+    .campaignContainer {
+        padding: 4vh 2vh;
+    }
+
+    .campaignTitle {
+        font-size: 3vh;
+    }
+
+    .noCampaigns {
+        font-size: 2vh;
+    }
+}

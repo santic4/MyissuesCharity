@@ -1,0 +1,54 @@
+.campaignCard {
+  height: min-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 1vw;
+  border-bottom: 1px solid rgba(48, 48, 48, 0.276);
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive media queries si necesitás ajustes finos */
+@media (max-width: 768px) {
+  .campaignCard {
+    width: 90vw;
+  }
+}
+
+.campaignTitle {
+  font-size: 2.5vh;
+  margin-bottom: 1vh;
+  color: #333;
+}
+
+.campaignDescription {
+  font-size: 2vh;
+  margin-bottom: 2vh;
+  color: #555;
+}
+
+.campaignProgress {
+  font-size: 1.8vh;
+  margin-bottom: 3vh;
+  color: #666;
+}
+
+/* Botón Donate */
+.donateButton {
+  display: inline-block;
+  padding: 0.6vh 1vw;
+  margin-top: 0.6vw;
+  font-size: 2vh;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.4vh;
+  transition: background-color 0.3s ease;
+}
+
+.donateButton:hover {
+  background-color: #0056b3;
+}

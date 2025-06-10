@@ -1,0 +1,163 @@
+.campaignManagerContainer{
+    width: 100%;
+}
+
+.formCampaignCreate{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.campaignCreateInput{
+    background-color: white;
+    color: black;
+}
+
+.buttonCreateCampaign{
+    border-radius: 0.2w;
+    font-size: 1.6vh;
+    padding: 1vh 1.6vh;
+}
+
+.campaignsTableContainer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.campaignsTableTitle {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Table Wrapper for Responsiveness */
+.tableWrapper {
+    overflow-x: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: white;
+}
+
+/* Base Table Styles */
+.campaignsTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 600px;
+}
+
+/* Header Styles */
+.tableHeader {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Row Styles */
+.tableRow {
+    transition: background-color 0.2s ease;
+}
+
+.tableRow:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.tableRow:hover {
+    background-color: #e9f7fe;
+}
+
+/* Cell Styles */
+.tableCell {
+    padding: 1rem;
+    color: #34495e;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+
+/* Special Cell Styles */
+.descriptionCell {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.amountCell {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.dateCell {
+    white-space: nowrap;
+}
+
+/* Empty State Styles */
+.emptyRow {
+    background-color: #f8f9fa;
+}
+
+.emptyCell {
+    padding: 2rem;
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .campaignsTableContainer {
+        padding: 1rem;
+    }
+    
+    .tableHeader, .tableCell {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .descriptionCell {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .campaignsTableTitle {
+        font-size: 1.5rem;
+    }
+    
+    .tableHeader, .tableCell {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .descriptionCell {
+        max-width: 100px;
+    }
+}
+
+/* Animation for better UX */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tableRow {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.tableRow:nth-child(1) { animation-delay: 0.05s; }
+.tableRow:nth-child(2) { animation-delay: 0.1s; }
+.tableRow:nth-child(3) { animation-delay: 0.15s; }
+.tableRow:nth-child(4) { animation-delay: 0.2s; }
+.tableRow:nth-child(5) { animation-delay: 0.25s; }

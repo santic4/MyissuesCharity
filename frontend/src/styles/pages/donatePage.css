@@ -1,0 +1,90 @@
+.donateContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1vh 0vh;
+    min-height: 73vh;
+    height: 100%;
+    margin: 0;
+}
+
+.donationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  width: 90vw;
+  max-width: 40vw;
+  padding: 1vh 4vw;
+  background-color: #f9f9f9;
+  border-radius: 1vw;
+  box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.formTitle {
+  font-size: 2.8vh;
+  font-weight: 600;
+  margin-bottom: 1vh;
+  color: #222;
+  text-align: center;
+}
+
+.formDescription {
+  font-size: 2vh;
+  color: #555;
+  text-align: center;
+}
+
+.formLabel {
+  font-size: 1.8vh;
+  color: #333;
+  margin-bottom: 1vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.formInputDonation,
+.formSelectDonation {
+  padding: 1.2vh 1vw;
+  font-size: 1.8vh;
+  background-color: whitesmoke;
+  color: black;
+  border: 0.2vh solid #ccc;
+  border-radius: 0.4vw;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0.5vh;
+}
+
+.submitButton {
+  padding: 2vh 4vw;
+  font-size: 2vh;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.4vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.submitButton:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .donationForm {
+    width: 95vw;
+    max-width: none;
+    padding: 3vh 3vw;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}

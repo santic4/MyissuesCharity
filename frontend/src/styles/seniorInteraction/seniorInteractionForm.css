@@ -1,0 +1,74 @@
+.callForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  padding: 4vh 4vw;
+  width: 90vw;
+  min-height: 75vh;
+  max-width: 40vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 1vw;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+/* Label */
+.formLabel {
+  font-size: 2vh;
+  color: #333;
+}
+
+.formSelect {
+  padding: 1.5vh 1vw;
+  font-size: 1.8vh;
+  border: 0.2vh solid #ccc;
+  border-radius: 0.8vw;
+  box-sizing: border-box;
+  background-color: white;
+  color: #333;
+}
+
+.formInput {
+  padding: 1.5vh 1vw;
+  font-size: 1.8vh;
+  border: 0.2vh solid #ccc;
+  background-color: white;
+  color: #333;
+  border-radius: 0.8vw;
+  box-sizing: border-box;
+  height: 12vw;
+}
+
+.submitButton {
+  align-self: flex-end;
+  padding: 0.6vh 1.8vw 0.8vh;
+  font-size: 2vh;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 0.4vh;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #1e7e34;
+}
+
+@media (max-width: 768px) {
+  .callForm {
+    width: 100vw;
+    padding: 3vh 3vw;
+    max-width: none;
+  }
+
+  .submitButton {
+    width: 100%;
+    text-align: center;
+  }
+}

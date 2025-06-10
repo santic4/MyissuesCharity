@@ -1,0 +1,9 @@
+.headerContainer{
+    margin: 1vh;
+}
+
+.headerContainer h1{
+    font-size: 3.6vh;
+    text-align: center;
+    color: black;
+}

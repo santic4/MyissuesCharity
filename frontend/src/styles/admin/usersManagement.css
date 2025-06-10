@@ -1,0 +1,95 @@
+.userManagmentContainer {
+    padding: 0vh;
+    background-color: #f9f9f9;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.userManagmentTitle {
+    font-size: 3vh;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.formContainer {
+    margin-bottom: 3vh;
+    background-color: #ffffff;
+    padding: 1vh;
+    border-radius: 2vh;
+    box-shadow: 0 0.6vh 1.2vh rgba(0, 0, 0, 0.05);
+}
+
+.userList {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.userItem {
+    background-color: #e6f0ff;
+    margin-bottom: 2vh;
+    padding: 2vh 3vh;
+    border-radius: 1.5vh;
+    font-size: 2.2vh;
+    color: #003566;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userEmail {
+    font-size: 2vh;
+    color: #555;
+}
+
+.noUsersText {
+    text-align: center;
+    font-size: 2.5vh;
+    color: #999;
+    padding: 3vh;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .userItem {
+        font-size: 2vh;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .userEmail {
+        font-size: 1.9vh;
+        margin-top: 1vh;
+    }
+
+    .formContainer {
+        padding: 3vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .userManagmentTitle {
+        font-size: 3vh;
+    }
+
+    .userItem {
+        font-size: 1.9vh;
+        padding: 2vh;
+    }
+
+    .userList {
+        max-width: 95%;
+    }
+
+    .formContainer {
+        padding: 2vh;
+    }
+
+    .noUsersText {
+        font-size: 2vh;
+    }
+}
