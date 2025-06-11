@@ -36,18 +36,6 @@ export default function HomePage() {
     }
   };
 
-  const onLoginAdmin = async creds => {
-    try {
-      const data = await loginAdmin(creds);
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('role', 'admin');
-      handleSuccess('Logged in successfully');
-      nav('/admin');
-    } catch (err) {
-      handleError('Invalid credentials');
-    }
-  };
-
   const onSignup = async info => {
     if (!validateEmail(info.email) || !info.name || !info.password) {
       handleError('Please ensure email is valid and all fields are required');
@@ -68,11 +56,9 @@ export default function HomePage() {
       <div className="buttonGroup">
         <button className="navButton" onClick={() => setMode('loginUser')}>Login User</button>
         <button className="navButton" onClick={() => setMode('signup')}>Register user</button>
-        <button className="navButton" onClick={() => setMode('loginAdmin')}>Login Admin</button>
       </div>
       {mode === 'loginUser' && <LoginForm onSubmit={onLoginUser} />}
       {mode === 'signup' && <Signup onSubmit={onSignup} />}
-      {mode === 'loginAdmin' && <LoginForm onSubmit={onLoginAdmin} />}
     </div>
   );
 }

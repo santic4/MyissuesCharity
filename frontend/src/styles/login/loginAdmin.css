@@ -1,0 +1,9 @@
+.containerLoginAdmin{
+    width: 100%;
+    text-align: center;
+    min-height: 72.2vh;
+}
+
+.loginAdminH2{
+    font-size: 3vh;
+}

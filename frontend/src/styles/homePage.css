@@ -1,14 +1,25 @@
 .mainContainer {
-  min-width: 100vw;
-  min-height: 75vh;
+  max-width: 100vw;
+  min-height: 73.6vh;
   color: #333;
+  height: 100%;
+}
+
+.buttonGroup{
+  padding-top: 8vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+  align-content: center;
+  justify-content: center;
 }
 
 .headerSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh 4vw;
+  padding: 2vh 0vw;
   color: #fff;
 }
 
@@ -22,10 +33,11 @@
 }
 
 .navButton {
-  padding: 1vh 2vw;
+  padding: 1.4vh 6vw;
   font-size: 1.8vh;
   border: none;
   border-radius: 0.5vh;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.324);
   cursor: pointer;
   background-color: #fff;
   color: var(--primary-color);
@@ -35,6 +47,7 @@
 .navButton:hover {
   background-color: #e6e6e6;
 }
+
 
 .formSection {
   display: flex;

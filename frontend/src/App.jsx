@@ -17,6 +17,7 @@ import CampaignManager from './components/campaigns/CreateCampaign';
 import Chatbot from './components/chatbot/Chatbot';
 import ScheduleSeniorCallForm from './components/seniorInteraction/SeniorInteractionForm';
 import AboutUs from './pages/AboutUs';
+import LoginFormAdmin from './pages/LoginFormAdmin';
 
 export default function App() {
   return (
@@ -31,7 +32,8 @@ export default function App() {
         <Route path="/thanks" element={<ProtectedRoute><Thanks/></ProtectedRoute>} />
         <Route path="/how-to-donate" element={<ProtectedRoute><Chatbot/></ProtectedRoute>} />
         <Route path="/help" element={<ProtectedRoute><ScheduleSeniorCallForm/></ProtectedRoute>}></Route>
-        <Route path="/about-us" element={<ProtectedRoute><AboutUs/></ProtectedRoute>} />
+        <Route path="/about-us" element={<ProtectedRoute><AboutUs/></ProtectedRoute>} /> 
+        <Route path="/login-admin" element={ <LoginFormAdmin/> }/>
 
         <Route
           path="/admin"
