@@ -1,7 +1,6 @@
 services:
   db:
     image: postgres:15
-    container_name: myissues-postgres
     restart: unless-stopped
     env_file:
       - ./.env
@@ -18,7 +17,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: myissues-backend
     restart: unless-stopped
     env_file:
       - ./backend/.env
@@ -34,7 +32,6 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: myissues-frontend
     restart: unless-stopped
     env_file:
       - ./frontend/.env
