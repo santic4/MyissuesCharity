@@ -7,7 +7,7 @@ const campaignRouter = Router();
 campaignRouter.get('/', getAllCampaigns);
 campaignRouter.get('/:id', getCampaignById);
 campaignRouter.post('/', authenticateAdmin, createCampaign);
-campaignRouter.put('/:id', updateCampaign);
-campaignRouter.delete('/:id', deleteCampaign);
+campaignRouter.put('/:id', authenticateAdmin, updateCampaign);
+campaignRouter.delete('/:id', authenticateAdmin, deleteCampaign);
 
 export default campaignRouter;
