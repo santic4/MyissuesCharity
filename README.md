@@ -16,7 +16,7 @@ La aplicación está desplegada en **AWS EC2** con HTTPS y sigue un flujo seguro
 
 ---
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **Frontend**  
   - React.js (Vite)  
@@ -38,7 +38,7 @@ La aplicación está desplegada en **AWS EC2** con HTTPS y sigue un flujo seguro
 
 ---
 
-## 📂 Estructura del Repositorio
+## Estructura del Repositorio
 
 myissues-charity/
 ├── backend/
