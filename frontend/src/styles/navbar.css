@@ -15,38 +15,56 @@ button:focus, button:focus-visible {
   background-color: black;
   box-shadow: var(--shadow);
   position: sticky;
-  height: 8vh;
+  height: 9vh;
   top: 0;
   z-index: 1000;
 }
 
 .navbarInner {
+  position: relative;     
   width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0;
+  padding-top: 1.2vh;
   margin: 0;
 }
 
-.navbarBrand .navbarLogo {
+.navbarMenu,
+.socialMediaContainer {
+  display: flex;
+  flex: 1 1 auto;   
+  min-width: 0;        
+  overflow: hidden;     
+  align-items: center;
+}
+
+.menuIcon {
+  flex-shrink: 0;
+}
+
+.navbarBrand{
     margin: 0;
     padding: 0;
+    position: absolute;
+    left: 49.6%;
+    transform: translateX(-50%);
+}
+
+.main-logo{
+    margin: 0;
+    padding: 0;
+    padding-top: 0.6vh;
+    object-fit: cover;
+    max-height: 8vh;
 }
 
 .navbarMenu {
   display: flex;
   list-style: none;
-  margin-right: 8vw;
   gap: 2rem;
-}
-
-.main-logo{
-    margin: 0;
-    padding: 0.5vh 0 0vh 6vh;
-    object-fit: cover;
-    max-height: 7vh;
 }
 
 .navbarLink,
@@ -54,7 +72,6 @@ button:focus, button:focus-visible {
   font-size: 2vh;
   color: whitesmoke;
   text-decoration: none;
-  margin-left: 28vw;
   border: none;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -105,8 +122,46 @@ button:focus, button:focus-visible {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+.socialMediaContainer {
+  display: flex;
+  align-items: center;
+  padding-right: 10vh;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.socialMediaContainer a {
+  font-size: 2.4vh;
+  color: var(--text-color);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socialMediaContainer a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .socialMediaContainer {
+    position: fixed;
+    bottom: 1vh;
+    left: 2vw;
+    background: rgba(0,0,0,0.6);
+    padding: 1vh 1vh 0.6vh 1vh;
+    border-radius: 0.5rem;
+  }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
+  .main-logo{
+    padding-top: 1vh;
+  }
+
+  .navbarInner {
+    padding-top: 3vh;
+  }
+
   .menuIcon {
     color: white;
     display: flex;
@@ -131,5 +186,18 @@ button:focus, button:focus-visible {
 
   .navbarMenu.open {
     transform: translateX(-56%);
+  }
+
+  .navbarLink,
+  .buttonLogout {
+    margin-left: 28vw;
+  } 
+
+  .menuIcon {
+    padding-left: 4vw;
+  }
+  
+  .menuIcon span {
+    width: 6vw;
   }
 }

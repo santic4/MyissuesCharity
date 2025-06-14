@@ -16,7 +16,7 @@ create table campaigns (
     description text,
     goal_amount numeric(12,2) not null,
     collected_amount numeric(12,2) not null default 0,
-    crated_at timestamptz not null default now()
+    created_at timestamptz not null default now()
 );
 
 drop table if exists donations cascade;

@@ -24,7 +24,7 @@ export default (sequelize) => {
                 type: DataTypes.DECIMAL(12,2),
                 defaultValue: 0
             },
-            create_at: {
+            created_at: {
                 type: DataTypes.DATE,
                 defaultValue: DataTypes.NOW
             }

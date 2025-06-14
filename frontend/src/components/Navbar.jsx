@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/navbar.css';
 import { useState } from 'react';
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = () => {  
   const token = localStorage.getItem('token');
@@ -20,16 +22,7 @@ const Navbar = () => {
   return(
     <nav className="navbarContainer">
       <div className="navbarInner">
-        <div className="navbarBrand">
-          <Link to="/user" onClick={handleLinkClick} className="navbarLogo">
-            <img src='./myissuescharity-logo-transparent.png' alt='MyissuesCharity' className='main-logo'></img>
-          </Link>
-        </div>
-        <button className={`menuIcon ${open ? 'active' : ''}`} onClick={() => setOpen(!open)} aria-label="Toggle menu">
-          <span />
-          <span />
-          <span />
-        </button>
+
         <ul className={`navbarMenu ${open ? 'open' : ''}`}>              
           <li><Link to="/user" className="navbarLink" onClick={handleLinkClick}>Home</Link></li>
           {token && (
@@ -41,6 +34,35 @@ const Navbar = () => {
             </>
           )}
         </ul>
+
+        <div className="navbarBrand">
+          <Link to="/user" onClick={handleLinkClick} className="navbarLogo">
+            <img src='./myissuescharity-logo-transparent.png' alt='MyissuesCharity' className='main-logo'></img>
+          </Link>
+        </div>
+
+        
+        <div className='socialMediaContainer'>
+          <a href="https://www.facebook.com/myissuescharity" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <FaFacebookF />
+          </a>
+          <a href="https://www.instagram.com/myissuescharity/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <FaInstagram />
+          </a>
+          <a href="https://x.com/MyissuesC" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <FaXTwitter />
+          </a>
+          <a href="https://www.youtube.com/@MyissuesCharity" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <FaYoutube />
+          </a>
+        </div>
+
+        <button className={`menuIcon ${open ? 'active' : ''}`} onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <span />
+          <span />
+          <span />
+        </button>
+
       </div>
     </nav>
   );
