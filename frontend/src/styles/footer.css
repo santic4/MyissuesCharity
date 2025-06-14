@@ -1,6 +1,6 @@
 .footerContainer{
     background-color: var(--background);
-    border-top: 1px solid rgba(0, 0, 0, 0.197);
+    border-top: 1px solid #9c228643;
     text-align: center;
     align-content: center;
     padding: 0;
@@ -10,6 +10,7 @@
 
 .footerContainer p{
     font-size: 1.4vh;
-    padding: 0 0 0.9vh 0;
+    color: #9c2286ab;
+    padding: 0.4vh 0;
     margin: 0;
 }

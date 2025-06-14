@@ -1,105 +1,135 @@
-.navbarContainer {
-    height: 10vh;
-    background-color: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 4vh;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #fff;
+  --accent-color: #00bfa6;
+  --shadow: 0 4px 12px rgba(0,0,0,0.2);
+  --spacing: 1rem;
 }
 
-.navbarMenu {
-    display: flex;
-    gap: 5vh;
-    list-style: none;
+button:focus, button:focus-visible {
+    outline: none;
+}
+
+.navbarContainer {
+  width: 100%;
+  background-color: black;
+  box-shadow: var(--shadow);
+  position: sticky;
+  height: 8vh;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbarInner {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.navbarBrand .navbarLogo {
     margin: 0;
     padding: 0;
 }
 
-.navbarLink {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 2.2vh;
-    font-weight: 500;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    padding-bottom: 0.5vh;
-    position: relative;
+.navbarMenu {
+  display: flex;
+  list-style: none;
+  margin-right: 8vw;
+  gap: 2rem;
 }
 
-.navbarLink:hover {
-    color: #00bfa6;
+.main-logo{
+    margin: 0;
+    padding: 0.5vh 0 0vh 6vh;
+    object-fit: cover;
+    max-height: 7vh;
 }
 
-.navbarLink::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 0.4vh;
-    bottom: 0;
-    left: 0;
-    background-color: #00bfa6;
-    transition: width 0.3s ease;
+.navbarLink,
+.buttonLogout {
+  font-size: 2vh;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-left: 28vw;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.navbarLink:hover::after {
-    width: 100%;
+.navbarLink:hover,
+.buttonLogout:hover {
+  color: var(--accent-color);
 }
 
-/* Responsive Navbar - Mobile */
+.buttonLogout {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+}
 
+/* Hamburger */
 .menuIcon {
-    display: none;
-    font-size: 4vh;
-    color: #ffffff;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2vh;
+  height: 2.8vh;
+  margin-right: 10vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
-.menuToggle {
-    display: none;
+.menuIcon span {
+  display: block;
+  height: 0.28vh;
+  width: 8vw;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.buttonLogout{
-    border-radius: 0.8vh;
-    border: 1px solid transparent;
-    margin-top: -0.4vh;
-    padding: 0.4vh 1.8vh 0.6vh;
-    font-size: 1.8vh;
-    font-weight: 500;
-    border-color: #646cff;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
+.menuIcon.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
 }
 
-.buttonLogout:hover{
-    border-color: #303bff;
+.menuIcon.active span:nth-child(2) {
+  opacity: 0;
 }
 
+.menuIcon.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-    .menuIcon {
-        display: block;
-    }
+  .menuIcon {
+    color: white;
+    display: flex;
+  }
 
-    .navbarMenu {
-        position: absolute;
-        top: 10vh;
-        left: 0;
-        width: 100%;
-        background-color: #1a1a1a;
-        flex-direction: column;
-        align-items: center;
-        gap: 4vh;
-        padding: 4vh 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-    }
+  .navbarMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    flex-direction: column;
+    padding-top: 4vh;
+    margin-top: 8vh;
+    gap: 2vh;
+    align-items: center;
+    justify-content: start;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
 
-    .menuToggle:checked + .menuIcon + .navbarMenu {
-        max-height: 50vh;
-    }
+  .navbarMenu.open {
+    transform: translateX(-56%);
+  }
 }

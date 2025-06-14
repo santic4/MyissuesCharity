@@ -42,23 +42,21 @@ html, body, #root {
 }
 
 .app-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .app-container main {
-  flex: 1;
-  height: 85vh;
+  height: 90vh;
 }
 
 .app-container header {
-  flex: 1;
-  height: 5vh;
+  height: 8vh;
 }
 
 .app-container footer {
-  flex: 1;
-  height: 5vh;
+  height: 3vh;
 }
 
 
