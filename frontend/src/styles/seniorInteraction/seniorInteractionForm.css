@@ -48,7 +48,7 @@
   align-self: flex-end;
   padding: 0.6vh 1.8vw 0.8vh;
   font-size: 2vh;
-  background-color: #28a745;
+  background-color: #9c2285;
   color: #fff;
   border: none;
   border-radius: 0.4vh;
@@ -57,7 +57,7 @@
 }
 
 .submitButton:hover {
-  background-color: #1e7e34;
+  background-color: #7b1c6b;
 }
 
 @media (max-width: 768px) {

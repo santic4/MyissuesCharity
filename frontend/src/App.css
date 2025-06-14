@@ -2,33 +2,73 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif;
   height: 100%;  
   max-width: 100vw;
 }
 
+:root {
+  --primary-color: #9c2285;
+  --foreground: #000;
+  --background: #f8f9fa;
+  --link-padding: 0.6vh 2vh;
+  --link-font-size: 1.6vh;
+  --border-radius: 0.4vh;
+  --transition: 0.2s ease-in-out;
+}
+
 body{
-  min-height: 100%;
-  background-color: white;
-  max-width: 100vw;
+  background-color: var(--background);
+  font-family: 'Inter', sans-serif;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-family: 'Inter', sans-serif;
   height: 100%;
-  overflow-x: hidden; /* evita scrollbar horizontal */
+  overflow-x: hidden;
+}
+
+main{
+  height: 100%;
+  min-height: 85vh;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container main {
+  flex: 1;
+  height: 85vh;
+}
+
+.app-container header {
+  flex: 1;
+  height: 5vh;
+}
+
+.app-container footer {
+  flex: 1;
+  height: 5vh;
 }
 
 
 main,
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
-  overflow: hidden; /* evita el scroll */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  overflow: hidden; 
 }
 
-/* Chrome, Edge, Safari */
 main::-webkit-scrollbar {
   display: none;
 }

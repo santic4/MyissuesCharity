@@ -26,7 +26,7 @@
 .loginButton {
   padding: 0.6vh auto;
   font-size: 1.8vh;
-  background-color: #414786;
+  background-color: #9c2285;
   color: white;
   border: none;
   border-radius: 0.8vw;
@@ -36,7 +36,7 @@
 }
 
 .loginButton:hover {
-  background-color: #218838;
+  background-color: #7b1c6b;
 }
 
 .loginForm input{

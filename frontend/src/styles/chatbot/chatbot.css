@@ -1,0 +1,145 @@
+.chatbotBubble {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vh;
+  background-color: #007bff;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6vh;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.chatbotOptions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chatbotOptionButton {
+  padding: 6px 12px;
+  color: #333;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.6vh;
+}
+
+.chatbotOptionButton:hover {
+  background-color: #dee2e6;
+}
+
+
+.chatbotWindow {
+  position: fixed;
+  bottom: 10vh;
+  right: 1.8vw;
+  width: 17.8vw;
+  max-width: 90%;
+  height: 54.6vh;
+  max-height: 80vh;
+  background-color: #fff;
+  border-radius: 1.2vh;
+  box-shadow:  1px 0px 2px 2px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chatbotHeader {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.68vh;
+}
+
+.chatbotCloseButton {
+  background: none;
+  border: none;
+  font-size: 2vh;
+  color: #fff;
+  cursor: pointer;
+}
+
+.chatbotBody {
+  flex: 1;
+  color: #333;
+  padding: 1vh;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.chatbotMessageUser {
+  background-color: #dcf8c6;
+  color: #333;
+  align-self: flex-end;
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 18px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.chatbotMessageBot {
+  background-color: #fff;
+  align-self: flex-start;
+  margin: 0.4vh 0;
+  padding: 1vh 1.6vh;
+  border-radius: 1.6vh;
+  max-width: 80%;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chatbotFooter {
+  display: flex;
+  padding: 1vh;
+  background-color: #fff;
+  border-top: 1px solid #eaeaea;
+}
+
+.chatbotInput {
+  flex: 1;
+  padding: 1vh;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  outline: none;
+  font-size: 1.6vh;
+}
+
+.chatbotSendButton {
+  margin-left: 1vh;
+  padding: 0.6vh 1.4vh;
+  border: none;
+  border-radius: 1.8vh;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.4vh;
+  cursor: pointer;
+}
+
+.chatbotSendButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chatbotError {
+  padding: 0.8vh;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-size: 1.2vh;
+  text-align: center;
+  border-top: 1px solid #f5c6cb;
+}

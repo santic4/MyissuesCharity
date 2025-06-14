@@ -1,9 +1,15 @@
 .headerContainer{
-    margin: 1vh;
+    background-color: #f8f9fa;
+    max-height: 6vh;
+    margin: 0;
+    padding: 0;
 }
 
 .headerContainer h1{
-    font-size: 3.6vh;
+    font-size: 1.6vh;
     text-align: center;
+    padding: 0.6vh 0;
+    font-weight: lighter;
+    margin: 0;
     color: black;
 }

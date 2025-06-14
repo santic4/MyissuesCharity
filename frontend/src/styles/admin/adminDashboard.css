@@ -1,96 +1,110 @@
 .dashboardContainer {
-    padding: 1vh 4vh;
+  display: flex;
+  height: 100%;
+  min-height: 86vh;
+  background-color: var(--background);
+  flex-direction: column;
 }
 
-.dashboardChildren{
-    min-height: 80vh;
-    box-sizing: border-box;
+.dashboardContainerNav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: min-content;
+  gap: 1.4vh;
+  padding: 1.4vh;
+  align-items: stretch;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.218);
+  justify-content: space-between;
+}
+
+.dasboardLogo{
     display: flex;
-    flex-direction: row;
+    padding: 0 0 0 2vh;
+    margin: 0;
+    height: 3vh;
+    gap: 1vh;
 }
 
-.dashboardNav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4vh;
-    width: 16vw;
-    height: 100%;
-    min-height: 80vh;
-    padding: 6vh 2vh 0 0;
-    justify-content: start;
-    flex-wrap: wrap;
-    border-right: 1px solid rgba(0, 0, 0, 0.261);
+.dasboardLogo img{
+    object-fit: cover;
+    height: 3vh;
 }
 
-.dashboardLink,
-.dashboardLinkActive {
-  font-size: 2vh;
-  padding: 1vh 1vh;
-  border-radius: 0.4vh;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.dasboardLogo h2{
+    font-size: 2vh;
+    color: rgba(0, 0, 0, 0.733);
+    font-weight: bolder;
+    margin: 0;
+}
+
+.dashboardChildren {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboardNav{
+    padding: 0 8vh;
 }
 
 .dashboardLink {
-  background-color: #0077b6;
-  color: #ffffff;
-}
-
-.dashboardLinkActive {
-  background-color: #015685;
-  color: whitesmoke;
-  box-shadow: 0 0.8vh 2vh rgba(0, 0, 0, 0.1);
-  transform: translateY(-0.2vh);
+  padding: var(--link-padding);
+  font-size: var(--link-font-size);
+  color: var(--foreground);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .dashboardLink:hover {
-    background-color: #023e8a;
-    color: whitesmoke;
+  background-color: rgba(0, 114, 245, 0.129);
+}
+
+.dashboardLinkActive {
+  padding: var(--link-padding);
+  font-size: var(--link-font-size);
+  color: var(--primary-color);
+  background-color: rgba(0, 114, 245, 0.15);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .dashboardOutlet {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  margin: 6vh auto;
+}
+
+/* ==== Responsive ==== */
+
+@media (max-width: 640px) {
+  .dashboardNav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboardLink,
+  .dashboardLinkActive {
     width: 100%;
-    height: 100%;
-    padding: 2vh;
-    margin: 0;
-    background-color: #ffffff;
-    border-radius: 0.4vh;
-    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+
+  .dashboardOutlet {
+    padding: 1rem;
+  }
 }
 
-/* Responsive Queries */
-
-@media (max-width: 1024px) {
-    .dashboardNav {
-        gap: 3vh;
-    }
-
-    .dashboardLink {
-        font-size: 2.2vh;
-        padding: 1.4vh 2.5vh;
-    }
-}
-
-@media (max-width: 768px) {
-    .dashboardTitle {
-        font-size: 3.2vh;
-    }
-
-    .dashboardNav {
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5vh;
-    }
-
-    .dashboardLink {
-        width: 70%;
-        text-align: center;
-        font-size: 2.2vh;
-        padding: 1.6vh;
-    }
-
-    .dashboardOutlet {
-        padding: 3vh 2vh;
-    }
+@media (min-width: 641px) and (max-width: 1024px) {
+  .dashboardNav {
+    justify-content: space-around;
+  }
+  .dashboardOutlet {
+    padding: 1.5rem;
+  }
 }
