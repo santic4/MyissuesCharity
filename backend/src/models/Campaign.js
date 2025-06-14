@@ -33,6 +33,7 @@ export default (sequelize) => {
             tableName: "campaigns",
             timestamps: true,
             createdAt: "created_at",
+            updatedAt: false
         }
     )
     

@@ -2,10 +2,8 @@ import { Campaign } from "../models/index.js";
 
 export const getAllCampaigns = async (req, res, next) => {
     try {
-        console.log('ASCDASDCSADCASDCASDc')
-        const campaigns = await Campaign.findAll({ order: [["create_at", "ASC"]]});
+        const campaigns = await Campaign.findAll({ order: [["created_at", "ASC"]]});
 
-        console.log(campaigns, 'ASCDASDCSADCASDCASDccampaigns')
         res.json(campaigns);
     } catch (error) {
         next(error)
