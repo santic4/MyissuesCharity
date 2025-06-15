@@ -1,14 +1,18 @@
-/* src/styles/pages/donatePage.css */
+.donateContainer{
+  max-height: 90vh;
+  overflow-y: auto;
+}
 
-/* Form container */
 .donationForm {
   max-width: 40vw;
-  margin: 4vh auto;
-  padding: 3vh 3vw;
+  margin: 2vh auto;
+  padding: 1vh 2vw;
   background-color: #ffffff;
   border-radius: 1vh;
   box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
   display: flex;
+  max-height: 80vh;
+  overflow-y: auto;
   flex-direction: column;
   gap: 2vh;
 }
