@@ -8,8 +8,7 @@ const DonationManagement = () => {
 
     useEffect(() => {
         fetchCampaigns()
-            .then(r=>r.json())
-            .then(setDons)
+            .then(data => setDons(data))
             console.log(dons,'dons');
     }, [])
     
