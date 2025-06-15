@@ -1,16 +1,44 @@
 import { useState, useEffect } from "react";
-import { VITE_API_URL } from "../config/config";
 import '../styles/admin/donationManagement.css';
-import { fetchCampaigns } from "../api/api";
+import { fetchDonations } from "../api/api";
 
 const DonationManagement = () => {
     const [dons, setDons] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchCampaigns()
-            .then(data => setDons(data))
-            console.log(dons,'dons');
-    }, [])
+      const loadDonations = async () => {
+        try {
+          const data = await fetchDonations();
+          setDons(data);
+        } catch (err) {
+          console.error('Error fetching donations:', err);
+          setError('Failed to load donations.');
+        } finally {
+          setLoading(false);
+        }
+      };
+      loadDonations();
+    }, []);
+
+      if (loading) {
+          return (
+            <section className="donationContainer">
+              <h3 className="donationSectionTitle">Donation Management</h3>
+              <p className="noDonationsText">Loading donations…</p>
+            </section>
+          );
+        }
+    
+        if (error) {
+          return (
+            <section className="donationContainer">
+              <h3 className="donationSectionTitle">Donation Management</h3>
+              <p className="noDonationsText">{error}</p>
+            </section>
+          );
+        }
     
     return(
         <section className="donationContainer">
