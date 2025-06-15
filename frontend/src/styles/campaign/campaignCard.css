@@ -1,52 +1,75 @@
 .campaignCard {
-  height: min-content;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-radius: 1vw;
-  border-bottom: 1px solid rgba(48, 48, 48, 0.276);
+  background-color: #fff;
+  border-radius: 1vh;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
   padding: 2vh 2vw;
-  box-sizing: border-box;
-  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Responsive media queries si necesitás ajustes finos */
-@media (max-width: 768px) {
-  .campaignCard {
-    width: 90vw;
-  }
+.campaignCard:hover {
+  box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.15);
 }
 
 .campaignTitle {
-  font-size: 2.5vh;
+  font-size: 2vh;
   margin-bottom: 1vh;
-  color: #333;
+  color: #222;
+  line-height: 1.2;
 }
 
 .campaignDescription {
-  font-size: 2vh;
-  margin-bottom: 2vh;
-  color: #555;
+  font-size: 1.8vh;
+  color: #444;
+  margin-bottom: 1vh;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.3s ease;
+}
+
+.collapsed {
+  -webkit-line-clamp: 3;
+  max-height: calc(3 * 2vh * 1.2); 
+}
+
+.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+}
+
+.readMoreButton {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-size: 1.6vh;
+  cursor: pointer;
+  margin-top: 0.5vh;
+  padding: 0;
+}
+
+.readMoreButton:hover {
+  text-decoration: underline;
 }
 
 .campaignProgress {
-  font-size: 1.8vh;
-  margin-bottom: 3vh;
-  color: #666;
+  font-size: 1.6vh;
+  color: #007bff;
+  margin: 1vh 0 1vh;
 }
 
-/* Botón Donate */
 .donateButton {
-  display: inline-block;
+  align-self: flex-start;
   padding: 0.6vh 1vw;
-  margin-top: 0.6vw;
-  font-size: 2vh;
+  font-size: 1.8vh;
   background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 0.4vh;
-  transition: background-color 0.3s ease;
+  color: #fff;
+  border: none;
+  border-radius: 0vh;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .donateButton:hover {

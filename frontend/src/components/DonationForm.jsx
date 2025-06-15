@@ -8,6 +8,7 @@ export default function DonationForm({ campaign }) {
   const [amount, setAmount] = useState('');
   const [method, setMethod] = useState('stripe');
   const [submitting, setSubmitting] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const nav = useNavigate();
 
   const handleSubmit = async e => {
@@ -25,41 +26,52 @@ export default function DonationForm({ campaign }) {
   };
 
   return (
-     <form onSubmit={handleSubmit} className="donationForm">
-        <h3 className="formTitle">Donate to {campaign.title}</h3>
-        <p className="formDescription">{campaign.description}</p>
-
-        <label className="formLabel">
-          Amount (USD):
-          <input
-            type="number"
-            step="0.01"
-            value={amount}
-            onChange={e => setAmount(e.target.value)}
-            required
-            className="formInputDonation"
-          />
-        </label>
-
-        <label className="formLabel">
-          Payment method:
-          <select
-            value={method}
-            onChange={e => setMethod(e.target.value)}
-            className="formSelectDonation"
-          >
-            <option value="stripe">Stripe</option>
-            <option value="paypal">PayPal</option>
-          </select>
-        </label>
-
+    <form onSubmit={handleSubmit} className="donationForm">
+      <h3 className="formTitle">Donate to {campaign.title}</h3>
+      <p className={`formDescription ${expanded ? 'expanded' : 'collapsed'}`}>
+        {campaign.description}
+      </p>
+      {campaign.description.split(' ').length > 20 && (
         <button
-          type="submit"
-          disabled={submitting}
-          className="submitButton"
+          type="button"
+          className="readMoreBtn"
+          onClick={() => setExpanded(!expanded)}
         >
-          {submitting ? 'Procesing...' : 'Donate'}
+          {expanded ? 'Read Less' : 'Read More'}
         </button>
-      </form>
+      )}
+
+      <label className="formLabel">
+        Amount (USD):
+        <input
+          type="number"
+          step="0.01"
+          value={amount}
+          onChange={e => setAmount(e.target.value)}
+          required
+          className="formInputDonation"
+        />
+      </label>
+
+      <label className="formLabel">
+        Payment method:
+        <select
+          value={method}
+          onChange={e => setMethod(e.target.value)}
+          className="formSelectDonation"
+        >
+          <option value="stripe">Stripe</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </label>
+
+      <button
+        type="submit"
+        disabled={submitting}
+        className="submitButton"
+      >
+        {submitting ? 'Processing...' : 'Donate'}
+      </button>
+    </form>
   );
 }

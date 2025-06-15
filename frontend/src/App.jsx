@@ -37,7 +37,6 @@ export default function App() {
           <Route path="/about-us" element={<ProtectedRoute><AboutUs/></ProtectedRoute>} /> 
           <Route path="/login-admin" element={ <LoginFormAdmin/> }/>
 
- <Route path="/dev" element={ <UserHome/> }/>
           <Route
             path="/admin"
             element={

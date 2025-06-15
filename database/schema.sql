@@ -6,7 +6,7 @@ create table users (
     email varchar(150) unique not null,
     password_hash varchar(255) not null,
     role varchar(50) not null default 'donor',
-    crated_at timestamptz not null default now()
+    created_at timestamptz not null default now()
 );
 
 drop table if exists campaigns cascade;
@@ -46,5 +46,5 @@ create table admin_users (
     username varchar(50) unique not null,
     password_hash varchar(255) not null,
     permissions text[] not null default array['read','write','delete'],
-    create_at timestamptz not null default now()
+    created_at timestamptz not null default now()
 );
