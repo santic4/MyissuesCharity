@@ -39,7 +39,7 @@ export const postDonation = async (campaignId, amount, method) => {
 };
 
 export const fetchDonations = async () => {
-  const res = await fetch(`${VITE_API_URL}/api/donations`);
+  const res = await fetch(`${VITE_API_URL}/api/donation`);
   if (!res.ok) throw new Error('Failed to fetch donations');
   return res.json();
 };
