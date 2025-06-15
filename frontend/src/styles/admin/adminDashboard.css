@@ -12,7 +12,7 @@
   width: 100vw;
   height: min-content;
   gap: 1.4vh;
-  padding: 1.4vh;
+  padding: 2.4vh 1.4vh 1.4vh 1.4vh;
   align-items: stretch;
   background-color: #f8f9fa;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.218);

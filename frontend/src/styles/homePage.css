@@ -39,7 +39,7 @@
   border-radius: 0.5vh;
   border-bottom: 1px solid rgba(0, 0, 0, 0.324);
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--background);
   color: var(--primary-color);
   transition: background-color var(--transition-speed), color var(--transition-speed);
 }

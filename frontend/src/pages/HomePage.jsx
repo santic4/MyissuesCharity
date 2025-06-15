@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginUser, loginAdmin, signupUser } from '../api/api';
+import { loginUser, signupUser } from '../api/api';
 import LoginForm from '../components/login/LoginForm';
 import Signup from './Login';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,6 +10,20 @@ import '../styles/homePage.css';
 export default function HomePage() {
   const [mode, setMode] = useState('loginUser');
   const nav = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+
+    console.log(token,'token', role,'role')
+    if(token && role === 'admin'){
+      nav('/admin/users');
+    } else if(token && role === 'user'){
+      nav('/users')
+    } else {
+      return
+    }
+  }, []);
 
   const handleError = message => {
     toast.error(message);

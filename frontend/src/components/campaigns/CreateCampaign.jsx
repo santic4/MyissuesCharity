@@ -62,6 +62,24 @@ const CampaignManager = () => {
     }
   };
 
+
+  const handleDelete = async id => {
+    if (!window.confirm('Are you sure you want to delete this campaign?')) return;
+    try {
+      await fetch(`${VITE_API_URL}/api/campaign/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      // Remove the deleted campaign from local state
+      setCampaigns(prev => prev.filter(c => c.id !== id));
+    } catch (err) {
+      console.error('Error deleting campaign:', err);
+    }
+  };
+
+
   return (
     <div className="campaignManagerContainer">
       <h2>Create campaign</h2>
@@ -141,6 +159,7 @@ const CampaignManager = () => {
                             <th className="tableHeader">Goal Amount (USD)</th>
                             <th className="tableHeader">Collected Amount (USD)</th>
                             <th className="tableHeader">Created At</th>
+                            <th className="tableHeader">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -153,7 +172,15 @@ const CampaignManager = () => {
                                     <td className="tableCell amountCell">{parseFloat(c.goal_amount).toFixed(2)}</td>
                                     <td className="tableCell amountCell">{parseFloat(c.collected_amount).toFixed(2)}</td>
                                     <td className="tableCell dateCell">
-                                        {new Date(c.create_at).toLocaleDateString()}
+                                        {new Date(c.created_at).toLocaleDateString()}
+                                    </td>
+                                    <td className="tableCell">
+                                      <button
+                                        className="deleteButton"
+                                        onClick={() => handleDelete(c.id)}
+                                      >
+                                        Delete
+                                      </button>
                                     </td>
                                 </tr>
                             ))
