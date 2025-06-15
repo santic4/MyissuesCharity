@@ -4,7 +4,7 @@ import { authenticate, authenticateAdmin } from '../services/auth/authServices.j
 
 const donationRouter = Router();
 
-donationRouter.get("/", authenticateAdmin ,getAllDonation);
+donationRouter.get('/all', authenticateAdmin ,getAllDonation);
 donationRouter.post("/", authenticate ,postDonation);
 
 export default donationRouter;

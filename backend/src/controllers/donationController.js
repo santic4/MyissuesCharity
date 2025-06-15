@@ -3,6 +3,7 @@ import { processPayment } from "../services/payments/paymentsServices.js";
 
 export const getAllDonation = async (req, res, next) => {
     try {
+      console.log('inside get donations')
         const donations = await Donation.findAll({ order: [["donated_at", "DESC"]]});
 
         if(!donations) throw new Error('Donations not found.')

@@ -39,7 +39,7 @@ export const postDonation = async (campaignId, amount, method) => {
 };
 
 export const fetchDonations = async () => {
-  const res = await fetch(`${VITE_API_URL}/api/donation`,{
+  const res = await fetch(`${VITE_API_URL}/api/donation/all`,{
       method: 'GET',
       credentials: 'include',
       headers: {

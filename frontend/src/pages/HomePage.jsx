@@ -15,7 +15,6 @@ export default function HomePage() {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
 
-    console.log(token,'token', role,'role')
     if(token && role === 'admin'){
       nav('/admin/users');
     } else if(token && role === 'user'){

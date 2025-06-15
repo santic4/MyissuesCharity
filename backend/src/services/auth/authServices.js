@@ -19,6 +19,7 @@ export function authenticate(req, res, next) {
 }
 
 export function authenticateAdmin(req, res, next) {
+  console.log('Admin auth', req.user.role)
   authenticate(req, res, () => {
     if (req.user.role !== 'admin') {
       return res.status(403).json({ error: 'Admin access required' });
