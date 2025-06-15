@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { VITE_API_URL } from "../config/config";
 import '../styles/admin/donationManagement.css';
+import { fetchCampaigns } from "../api/api";
 
 const DonationManagement = () => {
     const [dons, setDons] = useState([]);
 
     useEffect(() => {
-        fetch(`${VITE_API_URL}/api/donation`)
+        fetchCampaigns()
             .then(r=>r.json())
             .then(setDons)
+            console.log(dons,'dons');
     }, [])
     
     return(
