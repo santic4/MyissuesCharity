@@ -8,7 +8,7 @@ export default function Thanks() {
 
   return (
     <div className="thanksContainer">
-      <img src='../../public/myissuescharity-logo-transparent.png' alt="Logo" className="thanksLogoImage" />
+      <img src='../../../public/myissuescharity-logo-transparent.png' alt="Logo" className="thanksLogoImage" />
       <h2 className="thanksTitle">Thank you for your donation!</h2>
       <p className="thanksMessage">
         Your contribution makes a difference and helps us fulfill our mission.

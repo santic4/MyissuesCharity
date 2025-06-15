@@ -1,16 +1,93 @@
-.sectionContainer {
-  padding: 5vh;
-  min-height: 65vh;
+/* src/styles/pages/aboutUs.css */
+
+.aboutUsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8vh 4vw;
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-.heading {
-  color: black;
-  font-size: 3vh;
-  font-weight: bold;
+.aboutUsHeading {
+  font-size: 4vh;
+  color: #222222;
   margin-bottom: 2vh;
+  text-align: center;
 }
 
-.textParagraph {
-  font-size: 1.8vh;
-  line-height: 2.6vh;
+.aboutUsText {
+  font-size: 2vh;
+  color: #555555;
+  margin-bottom: 6vh;
+  max-width: 70vw;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.aboutUsContentContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4vw;
+  flex-wrap: wrap;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.aboutUsLogoImage {
+  width: 20vw;
+  max-width: 24vh;
+  object-fit: contain;
+}
+
+.aboutUsSocialContainer {
+  display: flex;
+  gap: 2vw;
+  margin-top: 4vh;
+}
+
+.aboutUsSocialIcon {
+  font-size: 2vh;
+  color: #555555;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.aboutUsSocialIcon:hover {
+  color: #00bfa6;
+  transform: translateY(-0.5vh);
+}
+
+@media (max-width: 1024px) {
+  .aboutUsHeading {
+    font-size: 3vh;
+  }
+  .aboutUsText {
+    font-size: 1.8vh;
+    max-width: 90vw;
+  }
+  .aboutUsContentContainer {
+    flex-direction: column;
+    gap: 2vh;
+  }
+  .aboutUsLogoImage {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutUsSection {
+    padding: 4vh 2vw;
+  }
+  .aboutUsHeading {
+    font-size: 3vh;
+  }
+  .aboutUsText {
+    font-size: 2vh;
+  }
+  .aboutUsSocialIcon {
+    font-size: 2vh;
+  }
 }
