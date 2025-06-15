@@ -17,15 +17,13 @@
   gap: 2vh;
 }
 
-/* Title */
 .formTitle {
-  font-size: 4vh;
+  font-size: 3vh;
   color: #222;
   margin-bottom: 1vh;
-  text-align: center;
+  text-align: start;
 }
 
-/* Description */
 .formDescription {
   font-size: 2vh;
   color: #444;
@@ -34,7 +32,6 @@
   transition: max-height 0.3s ease;
 }
 
-/* Collapsed to 4 lines */
 .collapsed {
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -42,13 +39,11 @@
   max-height: calc(4 * 2vh * 1.4); /* lines × font-size × line-height */
 }
 
-/* Expanded full */
 .expanded {
   max-height: none;
   -webkit-line-clamp: unset;
 }
 
-/* Read More button */
 .readMoreBtn {
   align-self: flex-start;
   background: none;
@@ -64,7 +59,6 @@
   text-decoration: underline;
 }
 
-/* Labels and inputs */
 .formLabelDonate {
   display: flex;
   flex-direction: column;
@@ -78,6 +72,8 @@
 .formSelectDonation {
   padding: 1.5vh 1vw;
   font-size: 2vh;
+  background-color: var(--background);
+  color: #333;
   border: 0.1vh solid #ccc;
   border-radius: 0.5vh;
   width: 100%;
