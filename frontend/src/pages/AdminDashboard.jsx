@@ -9,7 +9,7 @@ const AdminDashboard = () => {
         <div className="dashboardContainerNav">
 
           <div className="dasboardLogo">
-            <img src='../../public/icon-dashboard-admin.png' alt="dashboard-icon"></img>
+            <img src='../../icon-dashboard-admin.png' alt="dashboard-icon"></img>
             <h2 className="dashboardAdminTitle">Admin Dasboard</h2>
           </div>
         

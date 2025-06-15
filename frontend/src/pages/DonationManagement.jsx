@@ -51,6 +51,9 @@ const DonationManagement = () => {
                             <span className="donor">User id: {donation.user_id}</span> donated
                             <span className="amount"> ${donation.amount}</span> to
                             <span className="campaign"> Campaign id: {donation.campaign_id}</span>
+                            <span className="payment-method"><strong>Payment Method:</strong> {donation.payment_method}</span>
+                            <span className="transaction-id"><strong>Transaction ID:</strong> {donation.transaction_id}</span>
+                            <span className="date-donation"><strong>Date:</strong> {new Date(donation.donated_at).toLocaleString()}</span>
                         </li>
                     ))}
                 </ul>
