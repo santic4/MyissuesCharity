@@ -39,7 +39,14 @@ export const postDonation = async (campaignId, amount, method) => {
 };
 
 export const fetchDonations = async () => {
-  const res = await fetch(`${VITE_API_URL}/api/donation`);
+  const res = await fetch(`${VITE_API_URL}/api/donation`,{
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+  });
   if (!res.ok) throw new Error('Failed to fetch donations');
   return res.json();
 };
