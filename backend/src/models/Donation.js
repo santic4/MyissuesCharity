@@ -21,20 +21,16 @@ export default (sequelize) => {
                 type: DataTypes.DECIMAL(12,2),
                 allowNull: false
             },
-            donated_at: {
-                type: DataTypes.DATE,
-                defaultValue: DataTypes.NOW
-            },
             payment_method: {
                 type: DataTypes.STRING(50) 
             },
             transaction_id: { 
                 type: DataTypes.STRING(100) 
             },
-            create_at: {
+            donated_at: {
                 type: DataTypes.DATE,
                 defaultValue: DataTypes.NOW
-            }
+            },
         },
         {
             tableName: "donations",

@@ -37,7 +37,7 @@ const Navbar = () => {
 
         <div className="navbarBrand">
           <Link to="/user" onClick={handleLinkClick} className="navbarLogo">
-            <img src='./myissuescharity-logo-transparent.png' alt='MyissuesCharity' className='main-logo'></img>
+            <img src='../../myissuescharity-logo-transparent.png' alt='MyissuesCharity' className='main-logo'></img>
           </Link>
         </div>
 

@@ -13,38 +13,6 @@
     text-align: center;
 }
 
-.formContainer {
-    margin-bottom: 3vh;
-    background-color: #ffffff;
-    padding: 1vh;
-    border-radius: 2vh;
-    box-shadow: 0 0.6vh 1.2vh rgba(0, 0, 0, 0.05);
-}
-
-.userList {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 80%;
-}
-
-.userItem {
-    background-color: #e6f0ff;
-    margin-bottom: 2vh;
-    padding: 2vh 3vh;
-    border-radius: 1.5vh;
-    font-size: 2.2vh;
-    color: #003566;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.userEmail {
-    font-size: 2vh;
-    color: #555;
-}
-
 .noUsersText {
     text-align: center;
     font-size: 2.5vh;
@@ -52,44 +20,94 @@
     padding: 3vh;
 }
 
-/* Responsive */
-
-@media (max-width: 1024px) {
-    .userItem {
-        font-size: 2vh;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .userEmail {
-        font-size: 1.9vh;
-        margin-top: 1vh;
-    }
-
-    .formContainer {
-        padding: 3vh;
-    }
+.userTable{
+    width: 80%;
+    margin: 2vh auto;
+    border-collapse: collapse;
+    background-color: var(--background);
 }
 
+.userTable th,
+.userTable td {
+    padding: 1.5vh 2vh;
+    text-align: left;
+    font-size: 1.8vh;
+    border-bottom: 1px solid #cacaca;
+}
+
+.userTable td {
+    font-size: 1.4vh;
+    color: #333333da;
+}
+
+.userTable th {
+    background-color: #003599;
+    color: #fff;
+    font-weight: 500;
+}
+
+thead {
+  display: table;
+  width: calc(100% - 0.9em);
+  table-layout: fixed;
+  background-color: #003566;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody {
+  display: block;
+  max-height: 68vh;
+  overflow-y: auto;
+}
+
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.userTableRow:nth-child(even) {
+    background-color: #e6f0ff;
+}
+
+.deleteButton{
+    background: none;
+    color: red;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Responsive */
+
+@media (max-width : 1024px) {
+    .userTable {
+        width: 95%;
+    }
+
+    .userTable th,
+    .userTable td {
+        font-size: 1.8vh;
+        padding: 1.2vh 1.5vh;
+    }
+}
 @media (max-width: 768px) {
+    .userTable th,
+    .userTable td {
+        font-size: 1.6vh;
+        padding: 1vh;
+    }
+
     .userManagmentTitle {
         font-size: 3vh;
-    }
-
-    .userItem {
-        font-size: 1.9vh;
-        padding: 2vh;
-    }
-
-    .userList {
-        max-width: 95%;
-    }
-
-    .formContainer {
-        padding: 2vh;
     }
 
     .noUsersText {
         font-size: 2vh;
     }
 }
+
+

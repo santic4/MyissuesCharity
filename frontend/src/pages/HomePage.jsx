@@ -68,8 +68,8 @@ export default function HomePage() {
     <div className="mainContainer">
       <ToastContainer position="top-center" />
       <div className="buttonGroup">
-        <button className="navButton" onClick={() => setMode('loginUser')}>Login User</button>
-        <button className="navButton" onClick={() => setMode('signup')}>Register user</button>
+        <button className="navButton" onClick={() => setMode('loginUser')}>Login</button>
+        <button className="navButton" onClick={() => setMode('signup')}>Sign up</button>
       </div>
       {mode === 'loginUser' && <LoginForm onSubmit={onLoginUser} />}
       {mode === 'signup' && <Signup onSubmit={onSignup} />}

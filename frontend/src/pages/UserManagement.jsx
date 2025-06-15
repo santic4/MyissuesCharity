@@ -6,8 +6,145 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../styles/admin/usersManagement.css';
 
 const UserManagment = () => {
-    const [users, setUsers] = useState([]);
+    const [userss, setUsers] = useState([]);
 
+    const users = [
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        },
+        {
+            
+            id: '123',
+            email: 'santi@gmail.com',
+            name: 'santi',
+            role: 'user',
+            created_at: new Date()
+        }
+    ]
     useEffect(() => {
         fetch(`${VITE_API_URL}/api/users`)
             .then(r=>r.json())
@@ -36,28 +173,43 @@ const UserManagment = () => {
         <>
             <section className="userManagmentContainer">
                 <h3 className="userManagmentTitle">User Management</h3>
-
-                <ul className="userList">
-                    {users.length > 0 ? (
-                        users.map((u) => (
-                            <li key={u.id} className="userItem">
-                                {u.name} <span className="userEmail">({u.email})</span>
-                                                            <button 
-                                    onClick={() => deleteUser(u.id)} 
-                                    className="deleteButton"
-                                    aria-label={`Delete user ${u.name}`}
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                                    </svg>
-                                </button>
-                            </li>
-                        ))
-                    ) : (
-                        <li className="noUsersText">No users registered yet</li>
-                    )}
-                </ul>
+                {users.length > 0 ? (
+                  <table className="userTable">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {users.map(u => (
+                        <tr key={u.id} className="userTableRow">
+                          <td>{u.name}</td>
+                          <td>{u.email}</td>
+                          <td>{u.role}</td>
+                          <td>{new Date(u.created_at).toLocaleDateString()}</td>
+                          <td>
+                            <button
+                              onClick={() => deleteUser(u.id)}
+                              className="deleteButton"
+                              aria-label={`Delete user ${u.name}`}
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                              </svg>
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                ) : (
+                  <p className="noUsersText">No users registered yet</p>
+                )}
             </section>
            <ToastContainer
             position="top-right"

@@ -143,3 +143,18 @@
   text-align: center;
   border-top: 1px solid #f5c6cb;
 }
+
+
+@media (max-width : 1024px) {
+  .chatbotWindow {
+    bottom: 8vh;
+    right: 1.8vw;
+    width: 80vw;
+    max-width: 90%;
+    height: 70vh;
+  }
+
+  .chatbotMessageBot{
+    font-size: 1.6vh;
+  }
+}
