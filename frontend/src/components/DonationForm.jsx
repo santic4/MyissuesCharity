@@ -41,7 +41,7 @@ export default function DonationForm({ campaign }) {
         </button>
       )}
 
-      <label className="formLabel">
+      <label className="formLabelDonate">
         Amount (USD):
         <input
           type="number"
@@ -53,7 +53,7 @@ export default function DonationForm({ campaign }) {
         />
       </label>
 
-      <label className="formLabel">
+      <label className="formLabelDonate">
         Payment method:
         <select
           value={method}

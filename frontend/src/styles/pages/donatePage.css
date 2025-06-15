@@ -65,7 +65,7 @@
 }
 
 /* Labels and inputs */
-.formLabel {
+.formLabelDonate {
   display: flex;
   flex-direction: column;
   font-size: 2vh;
