@@ -52,7 +52,7 @@
   font-size: 2vh;
   cursor: pointer;
   padding: 0;
-  margin: 0;
+  margin: 0 0 2vh 0;
   transition: color 0.2s ease;
 }
 .readMoreBtn:hover {
@@ -62,7 +62,7 @@
 .formLabelDonate {
   display: flex;
   flex-direction: column;
-  font-size: 2vh;
+  font-size: 1.6vh;
   background-color: var(--background);
   color: #333;
   gap: 1vh;
@@ -70,7 +70,7 @@
 
 .formInputDonation,
 .formSelectDonation {
-  padding: 1.5vh 1vw;
+  padding: 0.8vh 1vh;
   font-size: 2vh;
   background-color: var(--background);
   color: #333;
@@ -103,16 +103,15 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .donationForm {
-    max-width: 60vw;
-    padding: 4vh 4vw;
+    padding: 2vh 2vw;
   }
 
   .formTitle {
-    font-size: 5vh;
+    font-size: 2vh;
   }
 
   .formDescription {
-    font-size: 2.5vh;
+    font-size: 1.8vh;
   }
 }
 
@@ -132,10 +131,10 @@
 
   .formInputDonation,
   .formSelectDonation {
-    font-size: 2vh;
+    font-size: 1.8vh;
   }
 
   .submitButton {
-    font-size: 2vh;
+    font-size: 1.8vh;
   }
 }
